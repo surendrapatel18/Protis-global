@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Protis Global</title>
-  <link href="images/homepage_shapes.png" rel="icon">
+  <link href="images/fevicon.jpg" rel="icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,31 +19,47 @@
     tailwind.config = {
       theme: {
         extend: {
+          zIndex: {
+            'custom': '10',
+          },
           fontFamily: {
             poppins: ['Poppins', 'sans-serif'],
           },
           colors: {
             protisBlack: '#4A4945',
+            lightpink: '#FFC0CBCC',
+            customyellow: '#FFD609',
+            blue: '#006D77',
           }
         }
       }
     }
   </script>
   <style>
-    html,
-    body {
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <style>
+    .v-shape {
       position: relative;
-      height: 100%;
+      background-color: #FCD34D;
+      overflow: hidden;
     }
 
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
+    .v-shape::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 15%;
+      height: 30px;
+      background-color: #FFFFFF;
+      clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
     }
+
+
 
     .swiper {
       width: 100%;
@@ -51,34 +67,17 @@
     }
 
     .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
       justify-content: center;
       align-items: center;
     }
 
     .swiper-slide img {
       display: block;
-      width: 100%;
-      height: 100%;
       object-fit: cover;
-    }
-
-    body {
-      background: #eee;
-    }
-
-    .swiper {
-      width: 100%;
-      height: 300px;
-      margin: 20px 0;
     }
   </style>
 
   <style>
-    /* Custom style to handle the open and close of the mobile menu */
     #navLinks {
       display: none;
     }
@@ -94,39 +93,42 @@
 <body>
 
   <!-- Header section -->
-  <div class="w-full lg:bg-white bg-gray-300">
+  <div class="w-full lg:bg-white bg-gray-300 fixed" style="z-index:1000;">
     <div class="max-w-[1440px] mx-auto flex justify-between items-center px-5 md:px-10 py-4">
       <!-- Logo -->
       <div>
-        <img src="images/nav_logo.png" alt="Logo" class="md:max-w-[153px] max-w-[95px]" />
+        <img src="images/nav_logo.png" alt="Logo" class="md:max-w-[153px] max-w-[95px]">
       </div>
-
 
       <!-- Navigation Links for Desktop -->
       <div class="flex sm:gap-6 gap-1">
         <div id="navLinks" class="hidden lg:flex gap-6 items-center">
           <a href="#about-us"
-            class="relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300">About
+            class="relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link">About
             Us</a>
           <a href="#our-approach"
-            class="relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300">Our
+            class="relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link">Our
             Approach</a>
           <a href="#industries-we-serve"
-            class="relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300">Industries
+            class="relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link">Industries
             We Serve</a>
           <a href="#media"
-            class="relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300">Media</a>
-          <i class="fa-solid fa-magnifying-glass"></i>
+            class="relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link">Media</a>
+
+          <a href="#search">
+            <img src="images/search_icon.png" alt="search Icon">
+          </a>
+
         </div>
 
         <div>
           <button
             class="bg-white rounded-md text-protisBlack sm:text-lg px-4 py-2 text-sm font-medium p-2 transition-transform transform hover:scale-105 hover:bg-gray-100 hover:text-black hover:shadow-lg duration-300 ease-in-out">
-            <a href="#">Contact Us</a>
+            <a href="#contact">Contact Us</a>
           </button>
         </div>
 
-        <!-- (Responsive toggle-menu - 1024px) -->
+        <!-- Responsive toggle-menu - 1024px -->
         <div class="lg:hidden">
           <button id="menuToggle"
             class="bg-white rounded-md text-protisBlack sm:text-lg px-4 py-2 text-sm font-medium p-2 transition-transform transform hover:scale-105 hover:bg-gray-100 hover:text-black hover:shadow-lg duration-300 ease-in-out">
@@ -135,81 +137,1192 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Mobile Navigation Links -->
-  <div id="mobileMenu"
-    class="lg:hidden w-full bg-gray-300 flex-col items-start text-left gap-6 px-5 md:px-10 py-2 hidden">
-    <a href="#about-us" class="block py-2" onclick="closeMenu()">About Us</a>
-    <a href="#our-approach" class="block py-2" onclick="closeMenu()">Our Approach</a>
-    <a href="#industries-we-serve" class="block py-2" onclick="closeMenu()">Industries We Serve</a>
-    <a href="#media" class="block py-2" onclick="closeMenu()">Media</a>
+    <!-- Mobile Navigation Links -->
+    <div id="mobileMenu"
+      class="lg:hidden w-full bg-gray-100 flex flex-col items-start text-left gap-6 px-5 md:px-10 py-5 hidden">
+      <a href="#about-us"
+        class="block pt-4 relative  text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link"
+        onclick="closeMenu()">About Us</a>
+      <a href="#our-approach" class="block relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link"
+      onclick="closeMenu()">Our Approach</a>
+      <a href="#industries-we-serve" class="block relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link"
+      onclick="closeMenu()">Industries We Serve</a>
+      <a href="#media" class="block relative  text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link"
+      onclick="closeMenu()">Media</a>
+    </div>
+
+
   </div>
 
   <!-- Navbar-End -->
 
   <!-- Banner-section -->
-  <div class="w-full bg-gray-200">
-    <div class="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between px-5 md:px-10">
+  <div id="top-page" class="w-full bg-gray-200">
+    <div class="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between  px-5 md:px-10">
 
       <!-- Text Section -->
-      <div class="mb-8 lg:mb-0 lg:max-w-[50%]">
-        <div
-          class="text-black text-[32px] lg:text-[42px] font-poppins font-bold leading-tight text-center lg:text-left">
-          Executive Recruiting for Consumer Brands
+
+      <div id="about-us" class="swiper1 swiper mySwiper1 pt-10">
+        <div class="swiper-wrapper">
+
+
+          <div class="swiper-slide flex flex-col lg:flex-row items-center justify-between pt-10">
+            <div class="pt-5 mb-8 lg:mb-0 lg:max-w-[50%]">
+              <div class="text-black text-3xl lg:text-[42px] font-poppins font-bold leading-tight text-left">
+                Executive Recruiting for Consumer Brands
+              </div>
+              <div class="max-w-[620px] text-protisBlack text-sm lg:text-base font-poppins font-normal mt-4 text-left">
+                We were built by CPG professionals intentionally around the CPG product journey — from ideation to
+                shelf.
+              </div>
+              <div class="mt-6 text-left">
+                <button
+                  class="text-protisBlack font-semibold text-sm lg:text-base font-poppins border-2 border-gray-400 px-4 py-2 transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:scale-105 hover:border-black focus:outline-none">
+                  Learn More About Us
+                </button>
+              </div>
+            </div>
+            <!-- Image Section -->
+            <div class="relative w-full lg:w-[50%]">
+              <img src="images/homepage_shapes.png" alt="Shape Design" class="w-full">
+              <div class="absolute top-0 right-0">
+                <img src="images/homepage_carousel-3.png" alt="Banner Girl" class="w-full">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col lg:flex-row items-center justify-between pt-10">
+            <div class="pt-5 mb-8 lg:mb-0 lg:max-w-[50%]">
+              <div class="text-black text-3xl lg:text-[42px] font-poppins font-bold leading-tight text-left">
+                Executive Recruiting for Consumer Brands
+              </div>
+              <div class="max-w-[620px] text-protisBlack text-sm lg:text-base font-poppins font-normal mt-4 text-left">
+                We were built by CPG professionals intentionally around the CPG product journey — from ideation to
+                shelf.
+              </div>
+              <div class="mt-6 text-left">
+                <button
+                  class="text-protisBlack font-semibold text-sm lg:text-base font-poppins border-2 border-gray-400 px-4 py-2 transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:scale-105 hover:border-black focus:outline-none">
+                  Learn More About Us
+                </button>
+              </div>
+            </div>
+            <!-- Image Section -->
+            <div class="relative w-full lg:w-[50%]">
+              <img src="images/homepage_shapes.png" alt="Shape Design" class="w-full">
+              <div class="absolute top-0 right-0">
+                <img src="images/homepage_carousel-4.png" alt="Banner Girl" class="w-full">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col lg:flex-row items-center justify-between pt-10">
+            <div class="pt-5 mb-8 lg:mb-0 lg:max-w-[50%]">
+              <div class="text-black text-3xl lg:text-[42px] font-poppins font-bold leading-tight text-left">
+                Executive Recruiting for Consumer Brands
+              </div>
+              <div class="max-w-[620px] text-protisBlack text-sm lg:text-base font-poppins font-normal mt-4 text-left">
+                We were built by CPG professionals intentionally around the CPG product journey — from ideation to
+                shelf.
+              </div>
+              <div class="mt-6 text-left">
+                <button
+                  class="text-protisBlack font-semibold text-sm lg:text-base font-poppins border-2 border-gray-400 px-4 py-2 transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:scale-105 hover:border-black focus:outline-none">
+                  Learn More About Us
+                </button>
+              </div>
+            </div>
+            <!-- Image Section -->
+            <div class="relative w-full lg:w-[50%]">
+              <img src="images/homepage_shapes.png" alt="Shape Design" class="w-full">
+              <div class="absolute top-0 right-0">
+                <img src="images/homepage_banner-5.png" alt="Banner Men" class="w-full">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col lg:flex-row items-center justify-between pt-10">
+            <div class="pt-5 mb-8 lg:mb-0 lg:max-w-[50%]">
+              <div class="text-black text-3xl lg:text-[42px] font-poppins font-bold leading-tight text-left">
+                Executive Recruiting for Consumer Brands
+              </div>
+              <div class="max-w-[620px] text-protisBlack text-sm lg:text-base font-poppins font-normal mt-4 text-left">
+                We were built by CPG professionals intentionally around the CPG product journey — from ideation to
+                shelf.
+              </div>
+              <div class="mt-6 text-left">
+                <button
+                  class="text-protisBlack font-semibold text-sm lg:text-base font-poppins border-2 border-gray-400 px-4 py-2 transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:scale-105 hover:border-black focus:outline-none">
+                  Learn More About Us
+                </button>
+              </div>
+            </div>
+            <!-- Image Section -->
+            <div class="relative w-full lg:w-[50%]">
+              <img src="images/homepage_shapes.png" alt="Shape Design" class="w-full">
+              <div class="absolute top-0 right-0">
+                <img src="images/homepage_carousel-2.png" alt="Banner Men" class="w-full">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide flex flex-col lg:flex-row items-center justify-between pt-10">
+            <div class="pt-5 mb-8 lg:mb-0 lg:max-w-[50%]">
+              <div class="text-black text-3xl lg:text-[42px] font-poppins font-bold leading-tight text-left">
+                Executive Recruiting for Consumer Brands
+              </div>
+              <div class="max-w-[620px] text-protisBlack text-sm lg:text-base font-poppins font-normal mt-4 text-left">
+                We were built by CPG professionals intentionally around the CPG product journey — from ideation to
+                shelf.
+              </div>
+              <div class="mt-6 text-left">
+                <button
+                  class="text-protisBlack font-semibold text-sm lg:text-base font-poppins border-2 border-gray-400 px-4 py-2 transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:scale-105 hover:border-black focus:outline-none">
+                  Learn More About Us
+                </button>
+              </div>
+            </div>
+            <!-- Image Section -->
+            <div class="relative w-full lg:w-[50%]">
+              <img src="images/homepage_shapes.png" alt="Shape Design" class="w-full">
+              <div class="absolute top-0 right-0">
+                <img src="images/home_banner_girl.png" alt="Banner Girl" class="w-full">
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="text-protisBlack text-sm lg:text-base font-poppins font-normal mt-4 text-center lg:text-left">
-          We were built by CPG professionals intentionally around the CPG product journey — from ideation to shelf.
+        <!-- Pagination -->
+
+        <div class="swiper-pagination">
+
         </div>
-        <div class="mt-6 text-center lg:text-left">
-          <button
-            class="text-protisBlack font-semibold text-sm lg:text-base font-poppins border-2 border-gray-400 px-4 py-2 transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:scale-105 hover:border-black focus:outline-none">
-            Learn More About Us
-          </button>
+
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Transforming Futures, One Individual at a Time -->
+
+
+  <div class="w-full max-w-[1440px] mx-auto py-5 md:py-10 px-5">
+    <div class="flex flex-col lg:flex-row justify-between">
+      <div class="w-full max-w-[580px] mb-6 md:mb-0">
+        <div class="text-2xl lg:text-[42px] text-black font-bold leading-tight">
+          Transforming Futures, One Individual at a Time
+        </div>
+        <div class="text-xl lg:text-2xl text-protisBlack font-semibold pt-5">
+          Your definition of winning is as unique as you are.
+        </div>
+        <div class="text-base text-protisBlack font-medium py-2">
+          The decision you make on who to partner with is not only critical to the success of delivering
+          transformational talent to the organization – it’s critical to achieving your own personal and professional
+          goals. Through our personal scorecard approach, we dive into your personal, professional, and financial
+          motivations to get to the core of what drives you.
         </div>
       </div>
 
-      <!-- Image Section -->
-      <div class="relative w-full lg:w-[50%]">
 
-        <img src="images/homepage_shapes.png" alt="Shape Design" />
+      <div class="relative max-w-[620px] md:h-[330px] h-auto">
+
+        <img id="thumbnail1" src="images/play_video.png" class="w-full h-full object-cover cursor-pointer"
+          alt="Video Thumbnail">
 
 
-        <div class="absolute top-0 right-0">
-          <img src="images/home_banner_girl.png" alt="Banner Girl" />
-        </div>
+        <video id="video1" class="w-full h-full object-cover hidden" controls="">
+          <source src="images/proti_global_demo.mp4" type="video/mp4">
+
+        </video>
       </div>
+
+
     </div>
   </div>
 
 
   <div class="w-full max-w-[1440px] mx-auto">
-    <div>
-      Transforming Futures, One Individual at a Time
-    </div>
-    <div>
-      Your definition of winning is as unique as you are.
-    </div>
-    <div>
-      The decision you make on who to partner with is not only critical to the success of delivering 
-      transformational talent to the organization – it’s critical to achieving your own personal and professional goals.
-      Through our personal scorecard approach, we dive into your personal, professional, and financial motivations to
-      get to the core of what drives you.​
+    <div class="flex lg:flex-row flex-col-reverse justify-between">
+
+      <!-- Image Section -->
+
+      <div class="relative w-full lg:w-6/12 flex items-center">
+
+        <img src="images/circle.png" alt="Shape Design" class="w-auto max-w-full sm:h-[auto] h-[357px]">
+
+
+        <div class="absolute inset-0">
+
+          <img src="images/gesse.png" alt="Gesse Image" class="absolute top-0 left-0 md:w-[319px] w-[230px]">
+
+          <img src="images/shutterstock.png" alt="Girl Pic"
+            class="absolute w-auto sm:h-[auto] h-[420px] sm:left-1/4 left-0">
+        </div>
+
+      </div>
+
+      <!-- Text Section -->
+      <div class="w-full lg:w-6/12 lg:pl-5 pb-8 flex flex-col items-start justify-center px-5">
+        <div class="text-protisBlack text-xl sm:text-3xl font-poppins font-semibold mt-4 text-left">
+          Leave Mediocrity in the Dust
+        </div>
+        <div class="text-protisBlack text-sm sm:text-base font-poppins font-medium mt-4 text-left pb-2">
+          We've been the driving force behind some of the most iconic success stories in the industry. From Fortune 500
+          companies to startups, we've been the catalyst that propels dreams into reality.
+        </div>
+        <div class="mt-6 text-left pb-5">
+          <button
+            class="text-protisBlack font-semibold text-sm lg:text-base font-poppins border-2 border-gray-400 px-4 py-2 transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:scale-105 hover:border-black focus:outline-none">
+            Learn About Our Approach
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
+
+  <!-- Our Clients -->
+
+  <div class="w-full max-w-[1440px] mx-auto md:px-10 py-14 px-5">
+    <div class="text-center">
+      <div id="client" class="text-2xl lg:text-3xl font-semibold text-black py-4">
+        Our Clients
+      </div>
+      <div class="max-w-full lg:max-w-[770px] text-base lg:text-lg font-normal text-protisBlack mx-auto pb-10">
+        Our commitment to fostering dynamic collaborations sets us apart, ensuring that clients can
+        confidently bring the best products and experiences to market through transformative talent.
+      </div>
+    </div>
+
+
+    <!-- Brand-logo slider -->
+
+    <div class="swiper mySwiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+      <div class="swiper-wrapper" id="swiper-wrapper-970a2c5110875f6de" aria-live="polite">
+
+
+        <div class="swiper-slide pb-5 swiper-slide-active" role="group" aria-label="1 / 8" data-swiper-slide-index="0"
+          style="width: 162.5px; margin-right: 10px;">
+          <img src="images/whiteclaw.png" alt="whiteclaw">
+        </div>
+        <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 8" data-swiper-slide-index="1"
+          style="width: 162.5px; margin-right: 10px;">
+          <img src="images/redbull.png" alt="Red Bull">
+        </div>
+        <div class="swiper-slide" role="group" aria-label="3 / 8" data-swiper-slide-index="2"
+          style="width: 162.5px; margin-right: 10px;">
+          <img src="images/trulieve.png" alt="Trulieve">
+        </div>
+        <div class="swiper-slide" role="group" aria-label="4 / 8" data-swiper-slide-index="3"
+          style="width: 162.5px; margin-right: 10px;">
+          <img src="images/pabst.png" alt="Pabst">
+        </div>
+        <div class="swiper-slide" role="group" aria-label="5 / 8" data-swiper-slide-index="4"
+          style="width: 162.5px; margin-right: 10px;">
+          <img src="images/arla.png" alt="Arla">
+        </div>
+        <div class="swiper-slide" role="group" aria-label="6 / 8" data-swiper-slide-index="5"
+          style="width: 162.5px; margin-right: 10px;">
+          <img src="images/hostess.png" alt="Hostess">
+        </div>
+        <div class="swiper-slide" role="group" aria-label="7 / 8" data-swiper-slide-index="6"
+          style="width: 162.5px; margin-right: 10px;">
+          <img src="images/whiteclaw.png" alt="whiteclaw">
+        </div>
+        <div class="swiper-slide" role="group" aria-label="8 / 8" data-swiper-slide-index="7"
+          style="width: 162.5px; margin-right: 10px;">
+          <img src="images/redbull.png" alt="Red Bull">
+        </div>
+      </div>
+      <div class="swiper-scrollbar swiper-scrollbar-horizontal">
+        <div class="swiper-scrollbar-drag" style="transform: translate3d(0px, 0px, 0px); width: 80.2044px;"></div>
+      </div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+
+
+  </div>
+
+  <!-- Marc Anthony Group -->
+
+  <div class="w-full max-w-[1440px] mx-auto pr-10">
+    <div class="flex flex-col lg:flex-row items-center justify-between lg:space-x-10 space-y-6 lg:space-y-0">
+
+      <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
+        <img src="images/CaseStudyBanner_WhiteClaw.png" alt="CaseStudyBanner_WhiteClaw" class="max-w-full h-auto">
+      </div>
+
+      <div class="w-full lg:w-1/2 max-w-[620px] text-left pl-5">
+        <div class="md:text-2xl text-lg text-protisBlack font-medium">
+          Marc Anthony Group
+        </div>
+        <button
+          class="mt-4 text-sm font-medium text-protisBlack bg-[#FFC0CB66] px-3 py-[4px] rounded-3xl hover:scale-105 hover:bg-lightpink transition-all duration-300">
+          BEER, WINE &amp; SPIRITS
+        </button>
+        <div class="mt-4 text-protisBlack">
+          Mark Anthony's ground-breaking move to internalize production resulted in the creation of three
+          state-of-the-art
+          breweries. Learn how we collaborated with them to turn this bold vision into a reality.
+        </div>
+        <button
+          class="mt-4 text-protisBlack font-semibold text-sm lg:text-base font-poppins border-2 border-gray-400 px-4 py-2 transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:scale-105 hover:border-black focus:outline-none">
+          View Case Study
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Let’s Build Your Future Together -->
+  <div class="w-full max-w-[1280px] mx-auto  px-0 lg:px-14 py-8 shadow-lg">
+    <div class="text-center">
+      <div id="industries-we-serve" class="sm:block hidden text-2xl lg:text-3xl font-semibold text-black py-4">
+        Let’s Build Your Future Together
+      </div>
+      <div
+        class="sm:block hidden max-w-full lg:max-w-[820px] text-base lg:text-lg font-normal text-protisBlack mx-auto pb-10">
+        We believe in the power of the right people in the right positions. Let us be your guide to discovering the
+        talent or role that fuels your success.
+      </div>
+      <div class="sm:hidden block text-2xl font-semibold text-black py-4">
+        Executive Recruiting for Consumer Brands
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center justify-between pt-5 space-y-8 lg:space-y-0 lg:space-x-6">
+
+
+      <div class="text-center">
+        <div>
+          <img class="mx-auto" src="images/looking_job.png" alt="Looking for a Job">
+        </div>
+        <div class="text-xl font-bold text-black pt-5">
+          I’m Looking<br> For A Job
+        </div>
+        <div class="text-base font-normal text-protisBlack py-3">
+          Candidate Resources
+        </div>
+        <button class="bg-customyellow text-black font-normal text-sm px-10 py-2 rounded-md hover:scale-105">
+          I Am Talent
+        </button>
+      </div>
+
+
+      <div class="hidden lg:block bg-gray-300 h-56 w-[2px]"></div>
+
+
+      <div class="text-center">
+        <div>
+          <img class="mx-auto" src="images/seeking_profile.png" alt="Seeking the Right Individual">
+        </div>
+        <div class="text-xl font-bold text-black pt-5">
+          I’m Seeking<br> The Right Individual
+        </div>
+        <div class="text-base font-normal text-protisBlack py-3">
+          Executive Search
+        </div>
+        <button class="bg-customyellow text-black font-normal text-sm px-10 py-2 rounded-md hover:scale-105">
+          I Need Talent
+        </button>
+      </div>
+
+      <div class="hidden lg:block bg-gray-300 h-56 w-[2px]"></div>
+
+
+      <div class="text-center">
+        <div>
+          <img class="mx-auto" src="images/carrer_planning.png" alt="Career Planning">
+        </div>
+        <div class="text-xl font-bold text-black pt-5">
+          I Want<br> Career Planning
+        </div>
+        <div class="text-base font-normal text-protisBlack py-3">
+          Board of Directors
+        </div>
+        <button class="bg-customyellow text-black font-normal text-sm px-10 py-2 rounded-md hover:scale-105">
+          View Career Resources
+        </button>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <!-- Media Center -->
+
+  <div id="media" class="w-full bg-blue mt-8">
+    <div class="max-w-[1440px] mx-auto px-0 lg:px-10 py-8">
+      <div class="text-center">
+        <div class="text-3xl font-bold text-white">
+          Media Center
+        </div>
+        <div class="max-w-[760px] text-base font-normal text-white opacity-80 mx-auto p-3">
+          Have it read up to date with our ultimate hub for inspiring articles, captivating videos, engaging podcasts,
+          and interactive webinars.
+        </div>
+      </div>
+
+      <div
+        class="w-full max-w-[1280px] mx-auto bg-gray-200 relative flex flex-col lg:flex-row items-center justify-between mb-8 lg:mb-0 pl-4 lg:pl-8">
+
+        <div class="pt-5 mb-8 lg:mb-0 w-full lg:w-1/2">
+          <div class="text-protisBlack text-sm lg:text-base font-bold font-poppins mb-2">
+            FEATURED
+          </div>
+          <h2 class="text-black text-xl md:text-3xl font-bold font-poppins max-w-[311px] lg:max-w-none mb-4">
+            A Job Seeker’s Guide to Interviewing
+          </h2>
+          <p class="text-protisBlack text-sm lg:text-base font-normal font-poppins max-w-[528px] mb-6">
+            During the interview process, it’s essential to pay attention to more than just the technical aspects of the
+            job. When interviewing for a new role, ensure you uncover the perfect employee experience that aligns with
+            your values and aspirations.
+          </p>
+          <div>
+            <button
+              class="text-protisBlack font-semibold text-sm lg:text-base font-poppins border-2 border-gray-400 px-4 py-2 transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:scale-105 focus:outline-none">
+              View Article
+            </button>
+          </div>
+        </div>
+
+
+        <div class="relative w-full lg:w-1/2">
+          <img src="images/yellow_shape.png" alt="Shape Design" class="w-full">
+          <div class="absolute -top-[5%] md:top-[10%] left-0 transform lg:translate-x-4 lg:-translate-y-4">
+            <img src="images/gesse.png" alt="Gesse" class="w-auto filter brightness-0 invert">
+          </div>
+          <div class="absolute bottom-0 right-0 transform lg:translate-x-4 lg:translate-y-4">
+            <img src="images/media_center_carousel.png" alt="Media Girl" class="w-auto">
+          </div>
+        </div>
+      </div>
+
+      <!-- overflow-x-auto -->
+
+      <div class="relative">
+        <div
+          class="w-full max-w-[1040px] mx-auto z-10 bg-white absolute left-1/2 transform -translate-x-1/2 flex justify-center text-center rounded-lg -mt-8 overflow-x-auto">
+          <div class="flex">
+            <button
+              class="min-w-[173px] h-[46px] text-base text-protisBlack font-medium bg-customyellow flex items-center justify-center rounded-lg">
+              All
+            </button>
+            <button
+              class="min-w-[173px] h-[46px] text-base text-protisBlack font-medium hover:bg-customyellow flex items-center justify-center rounded-lg">
+              Webinars
+            </button>
+            <button
+              class="min-w-[173px] h-[46px] text-base text-protisBlack font-medium hover:bg-customyellow flex items-center justify-center rounded-lg">
+              Videos
+            </button>
+            <button
+              class="min-w-[173px] h-[46px] text-base text-protisBlack font-medium hover:bg-customyellow flex items-center justify-center rounded-lg">
+              Events
+            </button>
+            <button
+              class="min-w-[173px] h-[46px] text-base text-protisBlack font-medium hover:bg-customyellow flex items-center justify-center rounded-lg">
+              Podcasts
+            </button>
+            <button
+              class="min-w-[173px] h-[46px] text-base text-protisBlack font-medium hover:bg-customyellow flex items-center justify-center rounded-lg">
+              Articles
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <!-- Webinars -->
+
+  <div class="w-full bg-blue">
+    <div class="max-w-[1440px] mx-auto px-10 py-8">
+      <div>
+
+      </div>
+
+
+      <div class="flex-col flex xl:flex-row justify-between py-10">
+        <div id="webinars" class="mx-auto xl:mx-0">
+          <div class="text-white font-medium text-xl mb-2">
+            Webinars
+          </div>
+          <div>
+            <img src="images/blockbuster_deal.png" alt="">
+          </div>
+
+          <div class="max-w-[298px] h-auto p-5 bg-white">
+
+            <div class="flex gap-3">
+              <img src="images/speraker_vedio_icon.png" alt="video speraker icon">
+
+              <span class="text-protisBlack text-base font-medium">
+                February 19, 2024
+              </span>
+            </div>
+
+            <div class="text-lg text-black font-semibold py-3">
+              A blockbuster cannabis deal goes bust and more could fall..
+            </div>
+            <div class="text-base text-protisBlack font-normal">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut...
+            </div>
+          </div>
+        </div>
+
+        <div class="mx-auto xl:mx-0">
+
+          <div class="flex justify-end gap-2 items-center my-2">
+            <div class="text-white font-medium text-sm">
+              View All
+            </div>
+            <img src="images/play_colour.png" alt="play icon" class="w-[8px] h-[8px]">
+          </div>
+          <div>
+            <img src="images/how_to_build.png" alt="">
+          </div>
+
+          <div class="max-w-[298px] h-auto p-5 bg-white">
+
+            <div class="flex gap-3">
+              <img src="images/speraker_vedio_icon.png" alt="video speraker icon">
+
+              <span class="text-protisBlack text-base font-medium">
+                February 17, 2024
+              </span>
+            </div>
+
+            <div class="text-lg text-black font-semibold py-3">
+              How to Build a Top Hiring Brand
+            </div>
+            <div class="text-base text-protisBlack font-normal">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut...
+            </div>
+          </div>
+        </div>
+
+        <!-- Video -->
+
+        <div class="mx-auto xl:mx-0 pt-3">
+          <div class="flex justify-between">
+            <div id="video_page" class="text-white font-medium text-xl mb-2">
+              Videos
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="text-sm text-white font-medium">
+                View all
+              </div>
+              <div>
+                <img src="images/play_colour.png" alt="play icon">
+              </div>
+            </div>
+          </div>
+          <div class="relative max-w-[620px] md:h-[330px] h-auto">
+
+            <img id="thumbnail2" src="images/meet_vedio.png" class="w-full h-full object-cover cursor-pointer"
+              alt="Video Thumbnail">
+
+
+            <video id="video2" class="w-full h-full object-cover hidden" controls="">
+              <source src="images/Restaurant_Promo.mp4" type="video/mp4">
+
+            </video>
+          </div>
+
+
+          <div class="max-w-[620px] h-auto p-5 bg-white">
+
+            <div class="flex gap-3">
+              <img src="images/video_icon.png" alt="Meet video icon">
+
+              <span class="text-protisBlack text-base font-medium">
+                February 19, 2024
+              </span>
+            </div>
+
+            <div class="text-lg text-black font-semibold py-3">
+              Meat Alternatives: A Tasty Journey into the Future<br>
+              of Food
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- Events -->
+      <div class="flex-col flex xl:flex-row justify-between lg:py-10 py-3">
+
+
+        <div id="event" class="mx-auto xl:mx-0">
+          <div class="flex justify-between">
+            <div class="text-white font-medium text-xl mb-2">
+              Events
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="text-sm text-white font-medium">
+                View all
+              </div>
+              <div>
+                <img src="images/play_colour.png" alt="play icon">
+              </div>
+            </div>
+          </div>
+
+
+          <div>
+            <img src="images/carft_beer_brand.png" alt="Beer Juice">
+          </div>
+          <div class="bg-white p-5">
+            <div class="flex gap-2">
+              <div>
+                <img src="images/calender_icon.png" alt="calender Icon">
+              </div>
+              <div class="text-protisBlack text-base font-medium">
+                February 19, 2024
+              </div>
+
+            </div>
+
+            <div class="text-lg text-black font-semibold py-3">
+              Craft Beer Brand Growth: A Strategic How To<br>
+              Guide
+            </div>
+          </div>
+        </div>
+
+        <!-- Podcasts -->
+
+        <div id="podcast" class="mx-auto xl:mx-0 pt-3">
+          <div class="text-white font-medium text-xl mb-2">
+            Podcasts
+          </div>
+          <div>
+            <img src="images/rahul_card.png" alt="Raul Leaf">
+          </div>
+
+          <div class="max-w-[298px] h-auto p-5 bg-white">
+
+            <div class="flex gap-3">
+              <img src="images/headuser_icon.png" alt="headphone icon">
+
+              <span class="text-protisBlack text-base font-medium">
+                Episode 5 Season 3
+              </span>
+            </div>
+
+            <div class="text-lg text-black font-semibold py-3">
+              Sustainable Elegance: Building an Eco-Conscious Culture | Raul Leal, SH Hotels &amp; Resorts
+            </div>
+            <div class="text-base text-protisBlack font-normal">
+              Bert Miller welcomes Raul Leal, the CEO of SH Hotels and Resorts,... </div>
+          </div>
+        </div>
+
+        <div class="mx-auto xl:mx-0">
+
+          <div class="flex justify-end gap-2 items-center my-2">
+            <div class="text-white font-medium text-sm">
+              View All
+            </div>
+            <img src="images/play_colour.png" alt="play icon" class="w-[8px] h-[8px]">
+          </div>
+          <div>
+            <img src="images/alex_card.png" alt="Alex Guy">
+          </div>
+
+          <div class="max-w-[298px] h-auto p-5 bg-white">
+
+            <div class="flex gap-3">
+              <img src="images/headuser_icon.png" alt="headphone Icon">
+
+              <span class="text-protisBlack text-base font-medium">
+                Episode 4 Season 3
+              </span>
+            </div>
+
+            <div class="text-lg text-black font-semibold py-3">
+              Solving the World’s Thirst: The World’s Path to Sustainable Water | Alex Guy, AirWater Co
+            </div>
+            <div class="text-base text-protisBlack font-normal">
+              In a world grappling with depleting water resources, one company is
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Articles -->
+
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+
+        <div id="article" class="max-w-[400px] md:h-[388px] h-auto">
+          <div class="text-white font-medium text-xl mb-2">
+            Articles
+          </div>
+          <div>
+            <img src="images/company_culture.png" alt="company Culture">
+          </div>
+          <div class="max-w-[400px] h-[128px] p-5 bg-white">
+
+            <div class="flex gap-3">
+              <img src="images/document_icon.png" alt="document Icon">
+
+              <span class="text-protisBlack text-base font-medium">
+                February 19, 2024
+              </span>
+            </div>
+
+            <div class="text-base lg:text-lg text-black font-semibold py-3">
+              How Job Seekers Can Assess Company Culture
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="max-w-[400px] md:h-[388px] h-auto md:mt-[72px] my-2">
+          <div>
+            <img src="images/hiring_brand.png" alt="company Hiring">
+          </div>
+          <div class="max-w-[400px] h-[128px] p-5 bg-white">
+
+            <div class="flex gap-3">
+              <img src="images/document_icon.png" alt="document Icon">
+
+              <span class="text-protisBlack text-base font-medium">
+                February 17, 2024
+              </span>
+            </div>
+
+            <div class="text-base lg:text-lg text-black font-semibold py-3">
+              How to Build a Top Hiring Brand
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="max-w-[400px] md:h-[388px] h-auto">
+          <div class="flex justify-end gap-2 items-center my-2">
+            <div class="text-white font-medium text-sm">
+              View All
+            </div>
+            <img src="images/play_colour.png" alt="play icon" class="w-[8px] h-[8px]">
+          </div>
+          <div>
+            <img src="images/stands_inovoter.png" alt="interview Round">
+          </div>
+          <div class="max-w-[400px] h-[128px] p-5 bg-white">
+
+            <div class="flex gap-3">
+              <img src="images/document_icon.png" alt="document Icon">
+
+              <span class="text-protisBlack text-base font-medium">
+                February 16, 2024
+              </span>
+            </div>
+
+            <div class="text-base lg:text-lg text-black font-semibold py-3">
+              3 Tips to Stand Out as an Innovator
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Our Impact -->
+
+  <div id="our-approach" class="w-full max-w-[1440px] mx-auto px-10">
+
+    <div class="text-center pt-8">
+      <div class="text-3xl font-bold text-black">
+        Our Impact
+      </div>
+      <div class="max-w-[760px] text-base font-normal text-protisBlack mx-auto py-3">
+        In 1995, our founders embarked on a journey that would disrupt the status quo of the executive recruiting
+        industry. We have been transforming companies and lives ever since.
+      </div>
+    </div>
+
+
+    <div class="max-lg:hidden flex flex-row items-center justify-between pt-5">
+
+
+      <div class="text-center">
+        <div>
+          <img class="mx-auto" src="images/first_interview_round.png" alt="Interviews icon">
+        </div>
+        <div class="text-xl font-bold text-black pt-5">
+          9,395
+        </div>
+        <div class="text-base font-medium text-protisBlack py-3">
+          First Round Interviews
+        </div>
+
+      </div>
+
+
+      <div class="hidden lg:block bg-gray-300 h-56 w-[2px]"></div>
+
+      <div class="text-center">
+        <div>
+          <img class="mx-auto" src="images/total_placement.png" alt="Placements icon">
+        </div>
+        <div class="text-xl font-bold text-black pt-5">
+          2,569
+        </div>
+        <div class="text-base font-medium text-protisBlack py-3">
+          Total Placements
+        </div>
+
+      </div>
+
+
+      <div class="hidden lg:block bg-gray-300 h-56 w-[2px]"></div>
+
+      <div class="text-center">
+        <div>
+          <img class="mx-auto" src="images/diversity_Placement.png" alt="Diversity icon">
+        </div>
+        <div class="text-xl font-bold text-black pt-5">
+          47%
+        </div>
+        <div class="text-base font-medium text-protisBlack py-3">
+          Diversity Placements
+        </div>
+
+      </div>
+
+
+      <div class="hidden lg:block bg-gray-300 h-56 w-[2px]"></div>
+
+      <div class="text-center">
+        <div>
+          <img class="mx-auto" src="images/economic_impect.png" alt="Economic icon">
+        </div>
+        <div class="text-xl font-bold text-black pt-5">
+          $700M
+        </div>
+        <div class="text-base font-medium text-protisBlack py-3">
+          Economic Impact
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="lg:hidden grid grid-cols-2 gap-8 pt-5 relative">
+      <div class="flex flex-col items-center">
+        <img class="mx-auto" src="images/first_interview_round.png" alt="Interviews icon">
+        <div class="text-xl font-bold text-black pt-5">9,395</div>
+        <div class="text-base font-medium text-protisBlack py-3">First Round Interviews</div>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <img class="mx-auto" src="images/total_placement.png" alt="Placements icon">
+        <div class="text-xl font-bold text-black pt-5">2,569</div>
+        <div class="text-base font-medium text-protisBlack py-3">Total Placements</div>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <img class="mx-auto" src="images/diversity_Placement.png" alt="Diversity icon">
+        <div class="text-xl font-bold text-black pt-5">47%</div>
+        <div class="text-base font-medium text-protisBlack py-3">Diversity Placements</div>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <img class="mx-auto" src="images/economic_impect.png" alt="Economic icon">
+        <div class="text-xl font-bold text-black pt-5">$700M</div>
+        <div class="text-base font-medium text-protisBlack py-3">Economic Impact</div>
+      </div>
+
+      <!-- Vertical & Horizontal Divider -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 bg-gray-300 w-[2px] h-full"></div>
+
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-300 w-full h-[2px]">
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <!-- Card Slider -->
+
+  <div id="slide" class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 py-8">
+    <div class="swiper mySwiper3">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide w-full lg:w-6/12 shadow-lg p-4 sm:p-6 mb-8 ">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4">
+            <div class="flex gap-4 items-center">
+              <img src="images/men_chery.png" alt="Chris Mayor" class="h-12 w-12 object-cover">
+              <div>
+                <div class="text-base font-bold text-black">Chris Mayor</div>
+                <div class="text-sm font-normal text-gray-700">VP Of Sales</div>
+              </div>
+            </div>
+
+            <button
+              class="mt-4 sm:mt-0 text-xs font-normal text-gray-700 bg-pink-100 p-2 rounded-3xl hover:scale-105 hover:bg-pink-200 transition-all duration-300">
+              Beer, Wine &amp; Spirits
+            </button>
+          </div>
+          <p class="text-sm font-normal text-gray-700">“Lorem ipsum dolor sit amet consectetur. Condimentum lectus
+            dignissim eleifend mauris. Eu et congue ut eget diam et vitae viverra facilisi.”</p>
+        </div>
+        <div class="swiper-slide w-full lg:w-6/12 shadow-lg p-4 sm:p-6 mb-8">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4">
+            <div class="flex gap-4 items-center">
+              <img src="images/jackson_Polad.png" alt="jackson Polad" class="h-12 w-12 object-cover">
+              <div>
+                <div class="text-base font-bold text-black">Jackson Poland</div>
+                <div class="text-sm font-normal text-gray-700">Trade Marketing Director</div>
+              </div>
+            </div>
+
+            <button
+              class="mt-4 sm:mt-0 text-xs font-normal text-gray-700 bg-green-100 p-2 rounded-3xl hover:scale-105 hover:bg-green-300 transition-all duration-300">
+              Cannabis
+            </button>
+          </div>
+          <p class="text-sm font-normal text-gray-700">“Lorem ipsum dolor sit amet consectetur. Condimentum lectus
+            dignissim eleifend mauris. Eu et congue ut eget diam et vitae viverra facilisi.”</p>
+        </div>
+        <div class="swiper-slide w-full lg:w-6/12 shadow-lg p-4 sm:p-6 mb-8 ">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4">
+            <div class="flex gap-4 items-center">
+              <img src="images/men_chery.png" alt="Chris Mayor" class="h-12 w-12 object-cover">
+              <div>
+                <div class="text-base font-bold text-black">Chris Mayor</div>
+                <div class="text-sm font-normal text-gray-700">VP Of Sales</div>
+              </div>
+            </div>
+
+            <button
+              class="mt-4 sm:mt-0 text-xs font-normal text-gray-700 bg-pink-100 p-2 rounded-3xl hover:scale-105 hover:bg-pink-200 transition-all duration-300">
+              Beer, Wine &amp; Spirits
+            </button>
+          </div>
+          <p class="text-sm font-normal text-gray-700">“Lorem ipsum dolor sit amet consectetur. Condimentum lectus
+            dignissim eleifend mauris. Eu et congue ut eget diam et vitae viverra facilisi.”</p>
+        </div>
+        <div class="swiper-slide w-full lg:w-6/12 shadow-lg p-4 sm:p-6 mb-8">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4">
+            <div class="flex gap-4 items-center">
+              <img src="images/jackson_Polad.png" alt="jackson Polad" class="h-12 w-12 object-cover">
+              <div>
+                <div class="text-base font-bold text-black">Jackson Poland</div>
+                <div class="text-sm font-normal text-gray-700">Trade Marketing Director</div>
+              </div>
+            </div>
+
+            <button
+              class="mt-4 sm:mt-0 text-xs font-normal text-gray-700 bg-green-100 p-2 rounded-3xl hover:scale-105 hover:bg-green-300 transition-all duration-300">
+              Cannabis
+            </button>
+          </div>
+          <p class="text-sm font-normal text-gray-700">“Lorem ipsum dolor sit amet consectetur. Condimentum lectus
+            dignissim eleifend mauris. Eu et congue ut eget diam et vitae viverra facilisi.”</p>
+        </div>
+      </div>
+
+      <div class="swiper-pagination">
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Need Top CPG Talent? -->
+
+  <div class="w-full v-shape bg-customyellow">
+    <div class="max-w-[1440px] mx-auto px-10 py-5 text-center relative z-10">
+      <div class="font-bold text-2xl text-black pt-8">
+        Need Top CPG Talent?
+      </div>
+      <div class="font-normal text-base text-black py-3">
+        Whether you're hiring or job-seeking, we've got you covered.
+      </div>
+      <button
+        class="text-black font-medium text-sm lg:text-base font-poppins border-[1px] border-black px-12 py-2 transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:scale-105 hover:border-black focus:outline-none">
+        Contact Us
+      </button>
+    </div>
+  </div>
+
+
+
+  <!-- Footer-Page -->
+
+  <footer id="contact" class="w-full max-w-[1440px] mx-auto px-6 py-10">
+
+    <div class="flex flex-col md:flex-row justify-between text-center md:text-left space-y-5 md:space-y-0 md:space-x-5">
+      <!-- Logo-->
+      <div class="flex flex-col items-left md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4 text-left">
+        <a href="#top-page">
+          <img src="images/footer_logo.png" alt="logo" class="w-24">
+        </a>
+
+        <p class="font-bold md:text-lg text-base text-protisBlack">
+          BUILDING COMPANIES. CHANGING LIVES.
+        </p>
+      </div>
+
+
+      <!-- Social Icons -->
+      <div class="flex gap-3 justify-center md:justify-start">
+        <a href="https://www.facebook.com" aria-label="Facebook" class="group">
+          <div
+            class="border-2 border-gray-300 rounded-md w-10 h-10 text-xl flex justify-center items-center transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-brands fa-square-facebook"></i>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com" aria-label="LinkedIn" class="group">
+          <div
+            class="border-2 border-gray-300 rounded-md w-10 h-10 text-xl flex justify-center items-center transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+        </a>
+        <a href="https://www.twitter.com" aria-label="Twitter" class="group">
+          <div
+            class="border-2 border-gray-300 rounded-md w-10 h-10 text-xl flex justify-center items-center transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-brands fa-square-x-twitter"></i>
+          </div>
+        </a>
+        <a href="https://www.instagram.com" aria-label="Instagram" class="group">
+          <div
+            class="border-2 border-gray-300 rounded-md w-10 h-10 text-xl flex justify-center items-center transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-brands fa-square-instagram"></i>
+          </div>
+        </a>
+        <a href="https://www.tiktok.com" aria-label="TikTok" class="group">
+          <div
+            class="border-2 border-gray-300 rounded-md w-10 h-10 text-xl flex justify-center items-center transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-brands fa-tiktok"></i>
+          </div>
+        </a>
+        <a href="https://www.youtube.com" aria-label="YouTube" class="group">
+          <div
+            class="border-2 border-gray-300 rounded-md w-10 h-10 text-xl flex justify-center items-center transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+        </a>
+
+
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="w-full bg-gray-300 h-[1px] my-5"></div>
+
+    <!-- Links Section -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 text-protisBlack text-base">
+      <div>
+        <p class="font-semibold mb-3">
+          <a href="#about-us">About Us</a>
+        </p>
+        <ul>
+          <li><a href="#">Our Mission &amp; Values</a></li>
+          <li><a href="#">Protis Global Careers</a></li>
+          <li><a href="#our-approach" class="font-semibold">Our Approach</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-semibold mb-3">
+          <a href="#our-approach">Industries We Serve</a>
+        </p>
+        <ul>
+          <li><a href="#drink">Non-Alcoholic Beverages</a></li>
+          <li><a href="#drink">Beer, Wine &amp; Spirits</a></li>
+          <li><a href="#drink">Food &amp; Snacks</a></li>
+          <li><a href="#slide">Cannabis</a></li>
+          <li><a href="#media">Food Tach</a></li>
+          <li><a href="#about">Health &amp; Beauty</a></li>
+          <li><a href="#client">Packaging</a></li>
+          <li><a href="#media">Pet</a></li>
+          <li><a href="#our-approach">Robotics &amp; Automation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-semibold mb-3">
+          <a href="#media">Media</a>
+        </p>
+        <ul>
+          <li><a href="#article">Articles</a></li>
+          <li><a href="#video_page">Videos</a></li>
+          <li><a href="#webinars">Webinars</a></li>
+          <li><a href="#podcast">Podcasts</a></li>
+          <li><a href="#event">Events</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-semibold mb-3">
+          <a href="#our-approach">Job</a>
+        </p>
+        <ul>
+          <li><a href="#">Search Open Jobs</a></li>
+          <li><a href="#">Submit A Resume</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="w-full bg-gray-300 h-[1px] my-5"></div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-4 md:space-y-0">
+      <div class="md:text-base text-sm text-protisBlack">
+        <div class="flex md:gap-2 gap-1">
+          <a href="#">Privacy Policy</a>
+          <span>|</span>
+          <a href="#">Terms &amp; Conditions</a>
+          <span>|</span>
+          <a href="#">Site Map</a>
+        </div>
+        <p class="pt-5 text-center text-gray-600 text-sm md:text-base">
+          © <span id="year">2024</span> Protis Global. All Rights Reserved.
+        </p>
+
+      </div>
+
+
+      <!-- Subscribe Section -->
+      <div>
+        <div class="text-base font-semibold pb-4">Keep up with the latest insights.</div>
+        <div class="flex gap-4">
+          <div id="search" class="flex items-center border-2 border-gray-300 rounded-md overflow-hidden">
+            <input type="email" id="email" placeholder="Email" required=""
+              class="lg:w-[360px] w-full px-3 py-2 focus:outline-none text-sm">
+          </div>
+          <button type="submit"
+            class=" rounded-[4px] bg-gray-700 text-white px-6 py-2 text-base font-medium hover:scale-110">
+            Subscribe
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
   <script src="script.js"></script>
+
+
 </body>
 
 </html>
-
-<!--   
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-
-      </div>
-      
-    </div>
-    <div class="swiper-pagination"></div>
-  </div> -->
