@@ -123,7 +123,6 @@ thumbnail1.addEventListener('click', () => {
       },
     },
   });
-  
 
 
 //  Image-thumbnail video Play
@@ -141,6 +140,5 @@ thumbnail2.addEventListener('click', () => {
 
 
 // Updated Year 
-
-document.getElementById('year').textContent = new Date().getFullYear();
   
+document.getElementById('year').textContent = new Date().getFullYear();
