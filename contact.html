@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protis Global</title>
+    <link href="images/fevicon.jpg" rel="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    zIndex: {
+                        'custom': '10',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        protisBlack: '#4A4945',
+                        lightpink: '#FFC0CBCC',
+                        customyellow: '#FFD609',
+                        blue: '#006D77',
+                        darkBlue: '#343851',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+   
+    </style>
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            object-fit: cover;
+        }
+    </style>
+
+    <style>
+        #navLinks {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            #navLinks {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header section -->
+    <div id="top-page" class="w-full lg:bg-white bg-gray-300">
+        <div class="max-w-[1440px] mx-auto flex justify-between items-center px-5 md:px-10 py-4">
+            <!-- Logo -->
+            <div>
+                <img src="images/nav_logo.png" alt="Logo" class="md:max-w-[153px] max-w-[95px]">
+            </div>
+
+            <!-- Navigation Links for Desktop -->
+            <div class="flex sm:gap-6 gap-1">
+                <div id="navLinks" class="hidden lg:flex gap-6 items-center">
+                    <a href="#about-us"
+                        class="relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link">About
+                        Us</a>
+                    <a href="#our-approach"
+                        class="relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link">Our
+                        Approach</a>
+                    <a href="#industries-we-serve"
+                        class="relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link">Industries
+                        We Serve</a>
+                    <a href="#media"
+                        class="relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link">Media</a>
+
+                    <a href="#search">
+                        <img src="images/search_icon.png" alt="search Icon">
+                    </a>
+
+                </div>
+
+                <div>
+                    <button
+                        class="bg-white rounded-md text-protisBlack sm:text-lg px-4 py-2 text-sm font-medium p-2 transition-transform transform hover:scale-105 hover:bg-gray-100 hover:text-black hover:shadow-lg duration-300 ease-in-out">
+                        <a href="./contact.html">Contact Us</a>
+                    </button>
+                </div>
+
+                <!-- Responsive toggle-menu - 1024px -->
+                <div class="lg:hidden">
+                    <button id="menuToggle"
+                        class="bg-white rounded-md text-protisBlack sm:text-lg px-4 py-2 text-sm font-medium p-2 transition-transform transform hover:scale-105 hover:bg-gray-100 hover:text-black hover:shadow-lg duration-300 ease-in-out">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Links -->
+        <div id="mobileMenu"
+            class="lg:hidden w-full bg-gray-100 flex flex-col items-start text-left gap-6 px-5 md:px-10 py-5 hidden">
+            <a href="#about-us"
+                class="block pt-4 relative  text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link"
+                onclick="closeMenu()">About Us</a>
+            <a href="#our-approach"
+                class="block relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link"
+                onclick="closeMenu()">Our Approach</a>
+            <a href="#industries-we-serve"
+                class="block relative text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link"
+                onclick="closeMenu()">Industries We Serve</a>
+            <a href="#media"
+                class="block relative  text-lg font-poppins font-medium text-protisBlack hover:text-gray-700 transition-all duration-300 ease-in-out after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-gray-300 after:transition-all after:duration-300 scroll-link"
+                onclick="closeMenu()">Media</a>
+        </div>
+
+
+    </div>
+
+    <!-- Navbar-End -->
+
+    <!-- Banner-section -->
+    <div class="w-full bg-gray-200">
+        <div class="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between  px-5 md:px-10">
+
+            <!-- Text Section -->
+
+            <div id="contact" class="swiper1 swiper mySwiper1">
+                <div class="swiper-wrapper">
+
+
+                    <div class="swiper-slide flex flex-col lg:flex-row items-center justify-between">
+                        <div class="pt-5 mb-8 lg:mb-0 lg:max-w-[50%]">
+                            <div
+                                class="text-black text-3xl lg:text-[42px] font-poppins font-bold leading-tight text-left">
+                                Let's Get Started
+                            </div>
+                            <div
+                                class="max-w-[620px] text-protisBlack text-sm lg:text-base font-poppins font-normal mt-4 text-left">
+                                Join us in our commitment to deliver the best talent, the best beverages, the best
+                                snacks, and the best experiences to the market.
+                            </div>
+                            <div class="mt-6 text-left">
+                                <button
+                                    class="text-protisBlack font-semibold text-sm lg:text-base font-poppins border-2 border-gray-400 px-4 py-2 transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:scale-105 hover:border-black focus:outline-none">
+                                    <a href="./index.html">Learn More About Us</a>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Image Section -->
+                        <div class="relative w-full lg:w-[50%] flex justify-center items-center pt-8">
+                            <div
+                                class="relative -mb-5 bg-customyellow w-72 h-72 lg:w-96 lg:h-96 rounded-full flex justify-center items-center">
+
+                                <img src="images/green_gesse.png" alt="Gesse"
+                                    class="absolute -top-4 right-1/4 lg:w-[336px] w-64">
+
+
+                                <img src="images/contactUs_banner.png" alt="Banner Men"
+                                    class="absolute top-0 left-1/2 max-w-[326px] h-full">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-slide flex flex-col lg:flex-row items-center justify-between">
+                        <div class="pt-5 mb-8 lg:mb-0 lg:max-w-[50%]">
+                            <div
+                                class="text-black text-3xl lg:text-[42px] font-poppins font-bold leading-tight text-left">
+                                Let's Get Started
+                            </div>
+                            <div
+                                class="max-w-[620px] text-protisBlack text-sm lg:text-base font-poppins font-normal mt-4 text-left">
+                                Join us in our commitment to deliver the best talent, the best beverages, the best
+                                snacks, and the best experiences to the market.
+                            </div>
+                            <div class="mt-6 text-left">
+                                <button
+                                    class="text-protisBlack font-semibold text-sm lg:text-base font-poppins border-2 border-gray-400 px-4 py-2 transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:scale-105 hover:border-black focus:outline-none">
+                                    <a href="./index.html">Learn More About Us</a>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Image Section -->
+                        <div class="relative w-full lg:w-[50%] flex justify-center items-center pt-8">
+                            <div
+                                class="relative -mb-5 bg-customyellow w-72 h-72 lg:w-96 lg:h-96 rounded-full flex justify-center items-center">
+
+                                <img src="images/green_gesse.png" alt="Gesse"
+                                    class="absolute -top-4 right-1/4 lg:w-[336px] w-64">
+
+
+                                <img src="images/contactus_banner-2.png" alt="Banner Girl"
+                                    class="absolute top-0 left-1/2 max-w-[326px] h-full">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-slide flex flex-col lg:flex-row items-center justify-between">
+                        <div class="pt-5 mb-8 lg:mb-0 lg:max-w-[50%]">
+                            <div
+                                class="text-black text-3xl lg:text-[42px] font-poppins font-bold leading-tight text-left">
+                                Let's Get Started
+                            </div>
+                            <div
+                                class="max-w-[620px] text-protisBlack text-sm lg:text-base font-poppins font-normal mt-4 text-left">
+                                Join us in our commitment to deliver the best talent, the best beverages, the best
+                                snacks, and the best experiences to the market.
+                            </div>
+                            <div class="mt-6 text-left">
+                                <button
+                                    class="text-protisBlack font-semibold text-sm lg:text-base font-poppins border-2 border-gray-400 px-4 py-2 transition-all duration-300 ease-in-out transform hover:bg-black hover:text-white hover:scale-105 hover:border-black focus:outline-none">
+                                    <a href="./index.html">Learn More About Us</a>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Image Section -->
+                        <div class="relative w-full lg:w-[50%] flex justify-center items-center pt-8">
+                            <div
+                                class="relative -mb-5 bg-customyellow w-72 h-72 lg:w-96 lg:h-96 rounded-full flex justify-center items-center">
+
+                                <img src="images/green_gesse.png" alt="Gesse"
+                                    class="absolute -top-4 right-1/4 lg:w-[336px] w-64">
+
+
+                                <img src="images/contactus_banner-3.png" alt="Banner Girl"
+                                    class="absolute top-0 left-1/2 max-w-[326px] h-full">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+                <!-- Pagination -->
+
+                <div class="swiper-pagination">
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <!-- Conatct-Page -->
+    <div class="w-full bg-gray-200">
+        <div class="mx-auto max-w-[1280px] px-4 sm:px-10 py-8">
+            <div class="flex flex-col lg:flex-row lg:gap-0 gap-6">
+                <!-- Left Section: Form -->
+                <div class="bg-white w-full lg:w-[66.6%] p-5">
+                    <div class="text-base text-protisBlack font-medium">
+                        Home / Contact Us
+                    </div>
+                    <div class="text-4xl text-black font-semibold mt-2">
+                        Contact Us
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-0 mt-4">
+                        <button
+                            class="w-full sm:w-auto text-white font-medium rounded-md text-sm lg:text-base font-poppins bg-darkBlue px-16 py-2 transition-all duration-300 ease-in-out transform hover:bg-gray-200 hover:text-black hover:scale-75">
+                            I Need Talent
+                        </button>
+                        <button
+                            class="w-full sm:w-auto text-protisBlack font-medium rounded-md text-sm lg:text-base font-poppins bg-gray-200 px-16 py-2 mt-0 sm:mt-0 transition-all duration-300 ease-in-out transform hover:bg-darkBlue hover:text-white hover:scale-75">
+                            I Am Talent
+                        </button>
+                    </div>
+                    
+
+                    <!-- Form Section -->
+                    <form class="mt-6" id="contactForm">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="fname" class="block font-medium">First Name</label>
+                                <input type="text" id="fname" name="fname" placeholder="First Name" required
+                                    class="w-full p-2 border border-gray-300 rounded-md" />
+                            </div>
+                            <div>
+                                <label for="lname" class="block font-medium">Last Name</label>
+                                <input type="text" id="lname" name="lname" placeholder="Last Name" required
+                                    class="w-full p-2 border border-gray-300 rounded-md" />
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <label for="cname" class="block font-medium">Company</label>
+                            <input type="text" id="cname" name="cname" placeholder="Company Name" required
+                                class="w-full p-2 border border-gray-300 rounded-md" />
+                        </div>
+                        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="email" class="block font-medium">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Email Address" required
+                                    class="w-full p-2 border border-gray-300 rounded-md" />
+                            </div>
+                            <div>
+                                <label for="Phone" class="block font-medium">Phone</label>
+                                <input type="tel" id="Phone" name="Phone" placeholder="(56) 456-4356" required
+                                    class="w-full p-2 border border-gray-300 rounded-md" />
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <label for="services" class="block font-medium">Which of our services would you like to
+                                discuss?</label>
+                            <select id="services" name="services" required
+                                class="w-full p-2 border border-gray-300 rounded-md">
+                                <option value="">Select an option</option>
+                                <option value="option1">Option 1</option>
+                                <option value="option2">Option 2</option>
+                            </select>
+                        </div>
+                        <div class="mt-4">
+                            <label for="message" class="block font-medium">Message</label>
+                            <textarea id="message" name="message" placeholder="Your message here..." required
+                                class="w-full p-2 border border-gray-300 rounded-md"></textarea>
+                        </div>
+                        <div class="mt-4">
+                            <input type="checkbox" id="privacy" required />
+                            <label for="privacy" class="ml-2">I have read and agree with the <a href="#" class="pb-1 border-b-2 border-gray-300">
+                                Privacy Policy
+                            </a>
+                            and <a href="#" class="pb-1 border-b-2 border-gray-300">terms & conditions.</a>
+                            </label>
+                        </div>
+                        <div class="flex items-center mt-6 gap-4">
+                            <div
+                                class="bg-customyellow text-black font-normal text-base py-2 px-16 rounded-md hover:scale-105 hover:bg-yellow-500">
+                                <input type="submit" value="Submit" class="cursor-pointer" />
+                            </div>
+                            <div class="text-sm text-gray-500">
+                                Required fields
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Section: Contact Details -->
+                <div class="bg-customyellow w-full lg:w-[33.3%] p-5">
+                    <div class="mb-4 text-protisBlack font-medium">
+                        Authentic partnerships are at the foundation of what we do.
+                    </div>
+                    <div class="mb-4 text-protisBlack font-medium">
+                        Whether you’re looking to find and hire top talent in your industry, develop a strategy that
+                        positions you to scale, or make a move in your personal career, we can help.
+                    </div>
+
+                    <!-- Address Section -->
+                    <div class="mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot text-lg"></i>
+                        <span class="text-protisBlack">
+                            Delray Beach, FL (HQ)<br>
+                            Chicago, IL<br>
+                            Tampa, FL
+                        </span>
+                    </div>
+
+                    <!-- Phone Section -->
+                    <div class="mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-phone-volume text-lg"></i>
+                        <span class="text-protisBlack">(561) 473-4144</span>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="bg-white h-[1px] mb-4"></div>
+
+                    <div class="mb-4 text-protisBlack font-medium">
+                        Not ready to reach out?
+                    </div>
+
+                    <div class="mb-2 text-protisBlack font-medium">
+                        Check out our latest industry insights:
+                    </div>
+
+
+                    <div class="text-sm flex items-center gap-2 mb-2">
+                        <img src="images/articles_icon.png" alt="Articles Icon" />
+                        <span class="text-protisBlack">Latest Articles</span>
+                    </div>
+
+
+                    <div class="text-sm flex items-center gap-2 mb-2">
+                        <img src="images/latest_videos.png" alt="Videos Icon" />
+                        <span class="text-protisBlack">Latest Videos</span>
+                    </div>
+
+
+                    <div class="text-sm flex items-center gap-2 mb-2">
+                        <img src="images/webinars_icon.png" alt="Webinars Icon" />
+                        <span class="text-protisBlack">Latest Webinars</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+  
+
+
+
+
+  <!-- Footer-Page -->
+
+  <footer id="contact" class="w-full max-w-[1440px] mx-auto px-6 py-10">
+
+    <div class="flex flex-col md:flex-row justify-between text-center md:text-left space-y-5 md:space-y-0 md:space-x-5">
+      <!-- Logo-->
+      <div class="flex flex-col items-left md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4 text-left">
+        <a href="#top-page">
+          <img src="images/footer_logo.png" alt="logo" class="w-24">
+        </a>
+
+        <p class="font-bold md:text-lg text-base text-protisBlack">
+          BUILDING COMPANIES. CHANGING LIVES.
+        </p>
+      </div>
+
+
+      <!-- Social Icons -->
+      <div class="flex gap-3 justify-center md:justify-start">
+        <a href="https://www.facebook.com" aria-label="Facebook" class="group">
+          <div
+            class="border-2 border-gray-300 rounded-md w-10 h-10 text-xl flex justify-center items-center transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-brands fa-square-facebook"></i>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com" aria-label="LinkedIn" class="group">
+          <div
+            class="border-2 border-gray-300 rounded-md w-10 h-10 text-xl flex justify-center items-center transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+        </a>
+        <a href="https://www.twitter.com" aria-label="Twitter" class="group">
+          <div
+            class="border-2 border-gray-300 rounded-md w-10 h-10 text-xl flex justify-center items-center transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-brands fa-square-x-twitter"></i>
+          </div>
+        </a>
+        <a href="https://www.instagram.com" aria-label="Instagram" class="group">
+          <div
+            class="border-2 border-gray-300 rounded-md w-10 h-10 text-xl flex justify-center items-center transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-brands fa-square-instagram"></i>
+          </div>
+        </a>
+        <a href="https://www.tiktok.com" aria-label="TikTok" class="group">
+          <div
+            class="border-2 border-gray-300 rounded-md w-10 h-10 text-xl flex justify-center items-center transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-brands fa-tiktok"></i>
+          </div>
+        </a>
+        <a href="https://www.youtube.com" aria-label="YouTube" class="group">
+          <div
+            class="border-2 border-gray-300 rounded-md w-10 h-10 text-xl flex justify-center items-center transition-transform duration-300 group-hover:scale-110">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+        </a>
+
+
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="w-full bg-gray-300 h-[1px] my-5"></div>
+
+<!-- Links Section-Desktop (Hidden on 768px and below) -->
+<div class="hidden md:grid grid-cols-4 gap-5 text-protisBlack text-base">
+    <div>
+      <p class="font-semibold mb-3">
+        <a href="#about-us" class="hover:text-black">About Us</a>
+      </p>
+      <ul>
+        <li><a href="#" class="hover:text-black hover:font-medium">Our Mission &amp; Values</a></li>
+        <li class="my-2"><a href="#" class="hover:text-black hover:font-medium">Protis Global Careers</a></li>
+        <li class="my-2"><a href="#our-approach" class="font-semibold hover:text-black hover:font-medium">Our Approach</a></li>
+      </ul>
+    </div>
+  
+    <div>
+      <p class="font-semibold mb-3">
+        <a href="#our-approach" class="hover:text-black">Industries We Serve</a>
+      </p>
+      <ul>
+        <li><a href="#drink" class="hover:text-black hover:font-medium">Non-Alcoholic Beverages</a></li>
+        <li class="my-2"><a href="#drink" class="hover:text-black hover:font-medium">Beer, Wine &amp; Spirits</a></li>
+        <li class="my-2"><a href="#drink" class="hover:text-black hover:font-medium">Food &amp; Snacks</a></li>
+        <li class="my-2"><a href="#slide" class="hover:text-black hover:font-medium">Cannabis</a></li>
+        <li class="my-2"><a href="#media" class="hover:text-black hover:font-medium">Food Tech</a></li>
+        <li class="my-2"><a href="#about" class="hover:text-black hover:font-medium">Health &amp; Beauty</a></li>
+        <li class="my-2"><a href="#client" class="hover:text-black hover:font-medium">Packaging</a></li>
+        <li class="my-2"><a href="#media" class="hover:text-black hover:font-medium">Pet</a></li>
+        <li class="my-2"><a href="#our-approach" class="hover:text-black hover:font-medium">Robotics &amp; Automation</a></li>
+      </ul>
+    </div>
+  
+    <div>
+      <p class="font-semibold mb-3">
+        <a href="#media" class="hover:text-black">Media</a>
+      </p>
+      <ul>
+        <li><a href="#article" class="hover:text-black hover:font-medium">Articles</a></li>
+        <li class="my-2"><a href="#video" class="hover:text-black hover:font-medium">Videos</a></li>
+        <li class="my-2"><a href="#webinars" class="hover:text-black hover:font-medium">Webinars</a></li>
+        <li class="my-2"><a href="#podcast" class="hover:text-black hover:font-medium">Podcasts</a></li>
+        <li class="my-2"><a href="#event" class="hover:text-black hover:font-medium">Events</a></li>
+      </ul>
+    </div>
+  
+    <div>
+      <p class="font-semibold mb-3">
+        <a href="#our-approach" class="hover:text-black">Job</a>
+      </p>
+      <ul>
+        <li><a href="#our-approach" class="hover:text-black hover:font-medium">Search Open Jobs</a></li>
+        <li class="my-2"><a href="#our-approach" class="hover:text-black hover:font-medium">Submit A Resume</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer-links-Responsive-screen (Visible on 768px and below) -->
+  <div class="block md:hidden flex flex-col">
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header flex justify-between" onclick="toggleAccordionItem(event)">
+                <span class="font-medium text-lg text-protisBlack cursor-pointer">About Us</span>
+                <img src="images/accordian_click_icon.png" alt="" />
+            </div>
+            <ul class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                <li class="my-2"><a href="#" class="hover:text-black hover:font-medium">Our Mission &amp; Values</a></li>
+                <li class="my-2"><a href="#" class="hover:text-black hover:font-medium">Protis Global Careers</a></li>
+                <li class="my-2"><a href="#our-approach" class="font-semibold hover:text-black hover:font-medium">Our Approach</a></li>
+            </ul>
+        </div>
+        <div class="bg-gray-300 h-[1px] my-3"></div>
+
+        <div class="accordion-item">
+            <div class="accordion-header flex justify-between" onclick="toggleAccordionItem(event)">
+                <span class="font-medium text-lg text-protisBlack cursor-pointer">Industries We Serve</span>
+                <img src="images/accordian_click_icon.png" alt="" />
+            </div>
+            <ul class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                <li class="my-2"><a href="#drink" class="hover:text-black hover:font-medium">Non-Alcoholic Beverages</a></li>
+                <li class="my-2"><a href="#drink" class="hover:text-black hover:font-medium">Beer, Wine & Spirits</a></li>
+                <li class="my-2"><a href="#drink" class="hover:text-black hover:font-medium">Food & Snacks</a></li>
+                <li class="my-2"><a href="#slide" class="hover:text-black hover:font-medium">Cannabis</a></li>
+                <li class="my-2"><a href="#media" class="hover:text-black hover:font-medium">Food Tech</a></li>
+                <li class="my-2"><a href="#about" class="hover:text-black hover:font-medium">Health & Beauty</a></li>
+                <li class="my-2"><a href="#client" class="hover:text-black hover:font-medium">Packaging</a></li>
+                <li class="my-2"><a href="#media" class="hover:text-black hover:font-medium">Pet</a></li>
+                <li class="my-2"><a href="#our-approach" class="hover:text-black hover:font-medium">Robotics & Automation</a></li>
+            </ul>
+        </div>
+        <div class="bg-gray-300 h-[1px] my-3"></div>
+
+        <div class="accordion-item">
+            <div class="accordion-header flex justify-between" onclick="toggleAccordionItem(event)">
+                <span class="font-medium text-lg text-protisBlack cursor-pointer">Media</span>
+                <img src="images/accordian_click_icon.png" alt="" />
+            </div>
+            <ul class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                <li class="my-2"><a href="#article" class="hover:text-black hover:font-medium">Articles</a></li>
+                <li class="my-2"><a href="#video" class="hover:text-black hover:font-medium">Videos</a></li>
+                <li class="my-2"><a href="#webinars" class="hover:text-black hover:font-medium">Webinars</a></li>
+                <li class="my-2"><a href="#podcast" class="hover:text-black hover:font-medium">Podcasts</a></li>
+                <li class="my-2"><a href="#event" class="hover:text-black hover:font-medium">Events</a></li>
+            </ul>
+        </div>
+        <div class="bg-gray-300 h-[1px] my-3"></div>
+
+        <div class="accordion-item">
+            <div class="accordion-header flex justify-between" onclick="toggleAccordionItem(event)">
+                <span class="font-medium text-lg text-protisBlack cursor-pointer">Job</span>
+                <img src="images/accordian_click_icon.png" alt="" />
+            </div>
+            <ul class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                <li class="my-2"><a href="#our-approach" class="hover:text-black hover:font-medium">Search Open Jobs</a></li>
+                <li class="my-2"><a href="#our-approach" class="hover:text-black hover:font-medium">Submit A Resume</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+  
+
+    <!-- Divider -->
+    <div class="w-full bg-gray-300 h-[1px] my-5"></div>
+
+    <div class="flex flex-col-reverse md:flex-row justify-between items-center text-left md:text-left space-y-4 md:space-y-0">
+      <div class="md:text-base text-sm text-protisBlack">
+        <div class="flex md:gap-2 gap-1">
+          <a href="#" class="hover:underline hover:text-black transition-all duration-300 ease-in-out">Privacy
+            Policy</a>
+          <span>|</span>
+          <a href="#" class="hover:underline hover:text-black transition-all duration-300 ease-in-out">Terms &amp;
+            Conditions</a>
+          <span>|</span>
+          <a href="#" class="hover:underline hover:text-black transition-all duration-300 ease-in-out">Site Map</a>
+        </div>
+        <p style="text-align: left;"
+        class="pt-5 text-center text-gray-600 text-sm md:text-base">
+          © <span id="year">2024</span> Protis Global. All Rights Reserved.
+        </p>
+
+      </div>
+
+
+      <!-- Subscribe Section -->
+      <div class="pb-5">
+        <div class="text-base font-semibold pb-4">Keep up with the latest insights.</div>
+        <form class="flex gap-4">
+          <div id="search" class="flex items-center border-2 border-gray-300 rounded-md overflow-hidden">
+            <input type="email" id="email" placeholder="Email" required=""
+              class="lg:w-[360px] w-full px-3 py-2 focus:outline-none text-sm">
+          </div>
+          <button type="submit"
+            class=" rounded-[4px] bg-gray-700 text-white px-6 py-2 text-base font-medium hover:scale-110">
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+  
+
+</body>
+
+</html>

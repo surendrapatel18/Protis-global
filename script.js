@@ -137,6 +137,18 @@ thumbnail2.addEventListener('click', () => {
 });
 
 
+// Toggle-Accordion-Item
+
+function toggleAccordionItem(event) {
+  const content = event.currentTarget.nextElementSibling;
+
+  if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+  } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+  }
+}
+
 
 
 // Updated Year 
