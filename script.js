@@ -149,6 +149,14 @@ function toggleAccordionItem(event) {
   }
 }
 
+    // Valid Form Alert message:
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log('Form Submitted');
+        alert('Thank you for submitting the form!');
+ 
+    }
 
 
 // Updated Year 
